@@ -12,10 +12,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
-    return YES;
+    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    
+    self.detailViewManager = [[DetailViewManager alloc] init];
+    self.detailViewManager.splitViewController = splitViewController;
+    self.detailViewManager.detailViewController = splitViewController.viewControllers.lastObject;
+    splitViewController.delegate = self.detailViewManager;
+    
+    if ([splitViewController respondsToSelector:@selector(setPresentsWithGesture:)])
+        [splitViewController setPresentsWithGesture:YES];
+    
+	return YES;
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

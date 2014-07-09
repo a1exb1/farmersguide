@@ -22,6 +22,9 @@
 		E4ABFABF196D562D00ECEC5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9E196D562D00ECEC5F /* UIKit.framework */; };
 		E4ABFAC7196D562D00ECEC5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4ABFAC5196D562D00ECEC5F /* InfoPlist.strings */; };
 		E4ABFAC9196D562D00ECEC5F /* Farmers_GuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFAC8196D562D00ECEC5F /* Farmers_GuideTests.m */; };
+		E4ABFAD5196D567300ECEC5F /* DetailViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFAD4196D567300ECEC5F /* DetailViewManager.m */; };
+		E4ABFAE0196D589200ECEC5F /* ArticleCategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFADF196D589200ECEC5F /* ArticleCategoriesTableViewController.m */; };
+		E4ABFAE3196D58CD00ECEC5F /* ArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFAE2196D58CD00ECEC5F /* ArticleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,12 @@
 		E4ABFAC4196D562D00ECEC5F /* Farmers GuideTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Farmers GuideTests-Info.plist"; sourceTree = "<group>"; };
 		E4ABFAC6196D562D00ECEC5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4ABFAC8196D562D00ECEC5F /* Farmers_GuideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Farmers_GuideTests.m; sourceTree = "<group>"; };
+		E4ABFAD3196D567300ECEC5F /* DetailViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewManager.h; sourceTree = "<group>"; };
+		E4ABFAD4196D567300ECEC5F /* DetailViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewManager.m; sourceTree = "<group>"; };
+		E4ABFADE196D589200ECEC5F /* ArticleCategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCategoriesTableViewController.h; sourceTree = "<group>"; };
+		E4ABFADF196D589200ECEC5F /* ArticleCategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCategoriesTableViewController.m; sourceTree = "<group>"; };
+		E4ABFAE1196D58CD00ECEC5F /* ArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewController.h; sourceTree = "<group>"; };
+		E4ABFAE2196D58CD00ECEC5F /* ArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +123,8 @@
 		E4ABFAA0196D562D00ECEC5F /* Farmers Guide */ = {
 			isa = PBXGroup;
 			children = (
+				E4ABFAD6196D57D300ECEC5F /* ViewControllers */,
+				E4ABFAD2196D566000ECEC5F /* Tools */,
 				E4ABFAA9196D562D00ECEC5F /* AppDelegate.h */,
 				E4ABFAAA196D562D00ECEC5F /* AppDelegate.m */,
 				E4ABFAAC196D562D00ECEC5F /* Main_iPhone.storyboard */,
@@ -153,6 +164,34 @@
 				E4ABFAC5196D562D00ECEC5F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4ABFAD2196D566000ECEC5F /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABFAD3196D567300ECEC5F /* DetailViewManager.h */,
+				E4ABFAD4196D567300ECEC5F /* DetailViewManager.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		E4ABFAD6196D57D300ECEC5F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABFAD7196D57DE00ECEC5F /* Articles */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E4ABFAD7196D57DE00ECEC5F /* Articles */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABFADE196D589200ECEC5F /* ArticleCategoriesTableViewController.h */,
+				E4ABFADF196D589200ECEC5F /* ArticleCategoriesTableViewController.m */,
+				E4ABFAE1196D58CD00ECEC5F /* ArticleViewController.h */,
+				E4ABFAE2196D58CD00ECEC5F /* ArticleViewController.m */,
+			);
+			name = Articles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,8 +293,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4ABFAB4196D562D00ECEC5F /* ViewController.m in Sources */,
+				E4ABFAE0196D589200ECEC5F /* ArticleCategoriesTableViewController.m in Sources */,
 				E4ABFAAB196D562D00ECEC5F /* AppDelegate.m in Sources */,
 				E4ABFAA7196D562D00ECEC5F /* main.m in Sources */,
+				E4ABFAD5196D567300ECEC5F /* DetailViewManager.m in Sources */,
+				E4ABFAE3196D58CD00ECEC5F /* ArticleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
