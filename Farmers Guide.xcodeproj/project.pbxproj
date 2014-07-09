@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E4ABFA9B196D562D00ECEC5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9A196D562D00ECEC5F /* Foundation.framework */; };
+		E4ABFA9D196D562D00ECEC5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9C196D562D00ECEC5F /* CoreGraphics.framework */; };
+		E4ABFA9F196D562D00ECEC5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9E196D562D00ECEC5F /* UIKit.framework */; };
+		E4ABFAA5196D562D00ECEC5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4ABFAA3196D562D00ECEC5F /* InfoPlist.strings */; };
+		E4ABFAA7196D562D00ECEC5F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFAA6196D562D00ECEC5F /* main.m */; };
+		E4ABFAAB196D562D00ECEC5F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFAAA196D562D00ECEC5F /* AppDelegate.m */; };
+		E4ABFAAE196D562D00ECEC5F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4ABFAAC196D562D00ECEC5F /* Main_iPhone.storyboard */; };
+		E4ABFAB1196D562D00ECEC5F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4ABFAAF196D562D00ECEC5F /* Main_iPad.storyboard */; };
+		E4ABFAB4196D562D00ECEC5F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFAB3196D562D00ECEC5F /* ViewController.m */; };
+		E4ABFAB6196D562D00ECEC5F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4ABFAB5196D562D00ECEC5F /* Images.xcassets */; };
+		E4ABFABD196D562D00ECEC5F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFABC196D562D00ECEC5F /* XCTest.framework */; };
+		E4ABFABE196D562D00ECEC5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9A196D562D00ECEC5F /* Foundation.framework */; };
+		E4ABFABF196D562D00ECEC5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9E196D562D00ECEC5F /* UIKit.framework */; };
+		E4ABFAC7196D562D00ECEC5F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4ABFAC5196D562D00ECEC5F /* InfoPlist.strings */; };
+		E4ABFAC9196D562D00ECEC5F /* Farmers_GuideTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFAC8196D562D00ECEC5F /* Farmers_GuideTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4ABFAC0196D562D00ECEC5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4ABFA8F196D562D00ECEC5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4ABFA96196D562D00ECEC5F;
+			remoteInfo = "Farmers Guide";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E4ABFA97196D562D00ECEC5F /* Farmers Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmers Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4ABFA9A196D562D00ECEC5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E4ABFA9C196D562D00ECEC5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E4ABFA9E196D562D00ECEC5F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E4ABFAA2196D562D00ECEC5F /* Farmers Guide-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Farmers Guide-Info.plist"; sourceTree = "<group>"; };
+		E4ABFAA4196D562D00ECEC5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4ABFAA6196D562D00ECEC5F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4ABFAA8196D562D00ECEC5F /* Farmers Guide-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Farmers Guide-Prefix.pch"; sourceTree = "<group>"; };
+		E4ABFAA9196D562D00ECEC5F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E4ABFAAA196D562D00ECEC5F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E4ABFAAD196D562D00ECEC5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		E4ABFAB0196D562D00ECEC5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		E4ABFAB2196D562D00ECEC5F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E4ABFAB3196D562D00ECEC5F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E4ABFAB5196D562D00ECEC5F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E4ABFABB196D562D00ECEC5F /* Farmers GuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Farmers GuideTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4ABFABC196D562D00ECEC5F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E4ABFAC4196D562D00ECEC5F /* Farmers GuideTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Farmers GuideTests-Info.plist"; sourceTree = "<group>"; };
+		E4ABFAC6196D562D00ECEC5F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4ABFAC8196D562D00ECEC5F /* Farmers_GuideTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Farmers_GuideTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4ABFA94196D562D00ECEC5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4ABFA9D196D562D00ECEC5F /* CoreGraphics.framework in Frameworks */,
+				E4ABFA9F196D562D00ECEC5F /* UIKit.framework in Frameworks */,
+				E4ABFA9B196D562D00ECEC5F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4ABFAB8196D562D00ECEC5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4ABFABD196D562D00ECEC5F /* XCTest.framework in Frameworks */,
+				E4ABFABF196D562D00ECEC5F /* UIKit.framework in Frameworks */,
+				E4ABFABE196D562D00ECEC5F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4ABFA8E196D562D00ECEC5F = {
+			isa = PBXGroup;
+			children = (
+				E4ABFAA0196D562D00ECEC5F /* Farmers Guide */,
+				E4ABFAC2196D562D00ECEC5F /* Farmers GuideTests */,
+				E4ABFA99196D562D00ECEC5F /* Frameworks */,
+				E4ABFA98196D562D00ECEC5F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4ABFA98196D562D00ECEC5F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABFA97196D562D00ECEC5F /* Farmers Guide.app */,
+				E4ABFABB196D562D00ECEC5F /* Farmers GuideTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4ABFA99196D562D00ECEC5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABFA9A196D562D00ECEC5F /* Foundation.framework */,
+				E4ABFA9C196D562D00ECEC5F /* CoreGraphics.framework */,
+				E4ABFA9E196D562D00ECEC5F /* UIKit.framework */,
+				E4ABFABC196D562D00ECEC5F /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4ABFAA0196D562D00ECEC5F /* Farmers Guide */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABFAA9196D562D00ECEC5F /* AppDelegate.h */,
+				E4ABFAAA196D562D00ECEC5F /* AppDelegate.m */,
+				E4ABFAAC196D562D00ECEC5F /* Main_iPhone.storyboard */,
+				E4ABFAAF196D562D00ECEC5F /* Main_iPad.storyboard */,
+				E4ABFAB2196D562D00ECEC5F /* ViewController.h */,
+				E4ABFAB3196D562D00ECEC5F /* ViewController.m */,
+				E4ABFAB5196D562D00ECEC5F /* Images.xcassets */,
+				E4ABFAA1196D562D00ECEC5F /* Supporting Files */,
+			);
+			path = "Farmers Guide";
+			sourceTree = "<group>";
+		};
+		E4ABFAA1196D562D00ECEC5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABFAA2196D562D00ECEC5F /* Farmers Guide-Info.plist */,
+				E4ABFAA3196D562D00ECEC5F /* InfoPlist.strings */,
+				E4ABFAA6196D562D00ECEC5F /* main.m */,
+				E4ABFAA8196D562D00ECEC5F /* Farmers Guide-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4ABFAC2196D562D00ECEC5F /* Farmers GuideTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABFAC8196D562D00ECEC5F /* Farmers_GuideTests.m */,
+				E4ABFAC3196D562D00ECEC5F /* Supporting Files */,
+			);
+			path = "Farmers GuideTests";
+			sourceTree = "<group>";
+		};
+		E4ABFAC3196D562D00ECEC5F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABFAC4196D562D00ECEC5F /* Farmers GuideTests-Info.plist */,
+				E4ABFAC5196D562D00ECEC5F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4ABFA96196D562D00ECEC5F /* Farmers Guide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4ABFACC196D562D00ECEC5F /* Build configuration list for PBXNativeTarget "Farmers Guide" */;
+			buildPhases = (
+				E4ABFA93196D562D00ECEC5F /* Sources */,
+				E4ABFA94196D562D00ECEC5F /* Frameworks */,
+				E4ABFA95196D562D00ECEC5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Farmers Guide";
+			productName = "Farmers Guide";
+			productReference = E4ABFA97196D562D00ECEC5F /* Farmers Guide.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4ABFABA196D562D00ECEC5F /* Farmers GuideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4ABFACF196D562D00ECEC5F /* Build configuration list for PBXNativeTarget "Farmers GuideTests" */;
+			buildPhases = (
+				E4ABFAB7196D562D00ECEC5F /* Sources */,
+				E4ABFAB8196D562D00ECEC5F /* Frameworks */,
+				E4ABFAB9196D562D00ECEC5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4ABFAC1196D562D00ECEC5F /* PBXTargetDependency */,
+			);
+			name = "Farmers GuideTests";
+			productName = "Farmers GuideTests";
+			productReference = E4ABFABB196D562D00ECEC5F /* Farmers GuideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4ABFA8F196D562D00ECEC5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Bechmann Limited";
+				TargetAttributes = {
+					E4ABFABA196D562D00ECEC5F = {
+						TestTargetID = E4ABFA96196D562D00ECEC5F;
+					};
+				};
+			};
+			buildConfigurationList = E4ABFA92196D562D00ECEC5F /* Build configuration list for PBXProject "Farmers Guide" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4ABFA8E196D562D00ECEC5F;
+			productRefGroup = E4ABFA98196D562D00ECEC5F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4ABFA96196D562D00ECEC5F /* Farmers Guide */,
+				E4ABFABA196D562D00ECEC5F /* Farmers GuideTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4ABFA95196D562D00ECEC5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4ABFAB1196D562D00ECEC5F /* Main_iPad.storyboard in Resources */,
+				E4ABFAB6196D562D00ECEC5F /* Images.xcassets in Resources */,
+				E4ABFAAE196D562D00ECEC5F /* Main_iPhone.storyboard in Resources */,
+				E4ABFAA5196D562D00ECEC5F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4ABFAB9196D562D00ECEC5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4ABFAC7196D562D00ECEC5F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4ABFA93196D562D00ECEC5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4ABFAB4196D562D00ECEC5F /* ViewController.m in Sources */,
+				E4ABFAAB196D562D00ECEC5F /* AppDelegate.m in Sources */,
+				E4ABFAA7196D562D00ECEC5F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4ABFAB7196D562D00ECEC5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4ABFAC9196D562D00ECEC5F /* Farmers_GuideTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4ABFAC1196D562D00ECEC5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4ABFA96196D562D00ECEC5F /* Farmers Guide */;
+			targetProxy = E4ABFAC0196D562D00ECEC5F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4ABFAA3196D562D00ECEC5F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4ABFAA4196D562D00ECEC5F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E4ABFAAC196D562D00ECEC5F /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4ABFAAD196D562D00ECEC5F /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		E4ABFAAF196D562D00ECEC5F /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4ABFAB0196D562D00ECEC5F /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		E4ABFAC5196D562D00ECEC5F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4ABFAC6196D562D00ECEC5F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4ABFACA196D562D00ECEC5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E4ABFACB196D562D00ECEC5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4ABFACD196D562D00ECEC5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Farmers Guide/Farmers Guide-Prefix.pch";
+				INFOPLIST_FILE = "Farmers Guide/Farmers Guide-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E4ABFACE196D562D00ECEC5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Farmers Guide/Farmers Guide-Prefix.pch";
+				INFOPLIST_FILE = "Farmers Guide/Farmers Guide-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E4ABFAD0196D562D00ECEC5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Farmers Guide.app/Farmers Guide";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Farmers Guide/Farmers Guide-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Farmers GuideTests/Farmers GuideTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E4ABFAD1196D562D00ECEC5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Farmers Guide.app/Farmers Guide";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Farmers Guide/Farmers Guide-Prefix.pch";
+				INFOPLIST_FILE = "Farmers GuideTests/Farmers GuideTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4ABFA92196D562D00ECEC5F /* Build configuration list for PBXProject "Farmers Guide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4ABFACA196D562D00ECEC5F /* Debug */,
+				E4ABFACB196D562D00ECEC5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4ABFACC196D562D00ECEC5F /* Build configuration list for PBXNativeTarget "Farmers Guide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4ABFACD196D562D00ECEC5F /* Debug */,
+				E4ABFACE196D562D00ECEC5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E4ABFACF196D562D00ECEC5F /* Build configuration list for PBXNativeTarget "Farmers GuideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4ABFAD0196D562D00ECEC5F /* Debug */,
+				E4ABFAD1196D562D00ECEC5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4ABFA8F196D562D00ECEC5F /* Project object */;
+}
