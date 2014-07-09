@@ -58,10 +58,20 @@
     
     if(currentOffset > -64){
         _shouldScroll = YES;
+        for (UIView *view in self.tableView.infiniteScrollingView.subviews)
+        {
+            view.hidden = NO;
+        }
     }
     else{
         _shouldScroll = NO;
+        for (UIView *view in self.tableView.infiniteScrollingView.subviews)
+        {
+            view.hidden = YES;
+        }
     }
+    
+    
 }
 
 -(void)loadMore
