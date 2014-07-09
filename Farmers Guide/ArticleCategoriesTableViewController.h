@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ArticleViewController.h"
+#import "ArticlesTableViewController.h"
 
 @interface ArticleCategoriesTableViewController : UITableViewController
 

@@ -1,18 +1,18 @@
 //
-//  ArticleCategoriesTableViewController.m
+//  ArticlesTableViewController.m
 //  Farmers Guide
 //
 //  Created by Alex Bechmann on 09/07/14.
 //  Copyright (c) 2014 Bechmann Limited. All rights reserved.
 //
 
-#import "ArticleCategoriesTableViewController.h"
+#import "ArticlesTableViewController.h"
 
-@interface ArticleCategoriesTableViewController ()
+@interface ArticlesTableViewController ()
 
 @end
 
-@implementation ArticleCategoriesTableViewController
+@implementation ArticlesTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,10 +32,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    //ArticleViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"Article"];
-    //[self.navigationController pushViewController:view animated:YES];
-    [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"874-newspaper-selected.png"] imageWithRenderingMode:UIImageRenderingModeAutomatic]];
 }
 
 - (void)didReceiveMemoryWarning
