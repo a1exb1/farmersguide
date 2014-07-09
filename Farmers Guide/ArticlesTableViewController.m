@@ -57,18 +57,18 @@
     //NSInteger maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
     
     if(currentOffset > -64){
-        _shouldScroll = YES;
         for (UIView *view in self.tableView.infiniteScrollingView.subviews)
         {
             view.hidden = NO;
         }
+        _shouldScroll = YES;
     }
     else{
-        _shouldScroll = NO;
         for (UIView *view in self.tableView.infiniteScrollingView.subviews)
         {
             view.hidden = YES;
         }
+        _shouldScroll = NO;
     }
     
     
@@ -121,7 +121,8 @@
     // Configure the cell...
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     
-    NSDictionary *category = [_cells objectAtIndex:indexPath.row];
+    NSDictionary *category = [_cells objectAtIndex:indexPath.row]; // crash here  [__NSArrayM objectAtIndex:]: index 15 beyond bounds for empty array'
+
     cell.textLabel.text = [category objectForKey:@"Title"];
     //cell.detailTextLabel.text = [category objectForKey:@"Title"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -148,6 +149,7 @@
 
 -(void)refreshFromArray: (NSMutableArray*)arr
 {
+    _cells = [[NSMutableArray alloc] init];
     _cells = arr;
 }
 
