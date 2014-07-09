@@ -30,33 +30,39 @@
     self.title = _categoryName;
     [self refresh];
     
+    //UIView *loader = self.tableView.infiniteScrollingView.vi
+    
     __weak typeof(self) weakSelf = self;
+    
     [self.tableView addInfiniteScrollingWithActionHandler:^{
         // append data to data source, insert new cells at the end of table view
         // call [tableView.infiniteScrollingView stopAnimating] when done
-        jsonReader *reader = [[jsonReader alloc] init];
-        reader.delegate = (id)weakSelf;
-        reader.task = @"add";
-        NSString *url = [NSString stringWithFormat:@"http://www.bechmann.co.uk/fg/GetJSData.aspx?dt=CategoryArticles&id=%li&start=%lu&rows=20", weakSelf.categoryID, (unsigned long)([weakSelf.cells count])];
-        [reader jsonAsyncRequestWithDelegateAndUrl:url];
+        if (weakSelf.shouldScroll) {
+            
+            jsonReader *reader = [[jsonReader alloc] init];
+            reader.delegate = (id)weakSelf;
+            reader.task = @"add";
+            NSString *url = [NSString stringWithFormat:@"http://www.bechmann.co.uk/fg/GetJSData.aspx?dt=CategoryArticles&id=%li&start=%lu&rows=20", weakSelf.categoryID, (unsigned long)([weakSelf.cells count])];
+            [reader jsonAsyncRequestWithDelegateAndUrl:url];
+        }
+        else{
+            [weakSelf.tableView.infiniteScrollingView stopAnimating];
+        }
     }];
-    
-    
-//    [self.tableView addPullToRefreshWithActionHandler:^{
-//        [weakSelf refresh];
-//    }];
 }
 
-//- (void)scrollViewDidScroll: (UIScrollView*)scrollView {
-//    
-//    NSInteger currentOffset = scrollView.contentOffset.y;
-//    NSInteger maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
-//
-//    if ((currentOffset > 0) && (maximumOffset - currentOffset) <= 10) {
-//        [self loadMore];
-//    }
-//
-//}
+- (void)scrollViewDidScroll: (UIScrollView*)scrollView {
+    
+    NSInteger currentOffset = scrollView.contentOffset.y;
+    //NSInteger maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height;
+    
+    if(currentOffset > -64){
+        _shouldScroll = YES;
+    }
+    else{
+        _shouldScroll = NO;
+    }
+}
 
 -(void)loadMore
 {

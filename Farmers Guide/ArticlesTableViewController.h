@@ -16,6 +16,7 @@
 @property NSString *categoryName;
 @property long loadedArticles;
 @property NSMutableArray *cells;
+@property bool shouldScroll;
 
 -(IBAction)refresh;
 
