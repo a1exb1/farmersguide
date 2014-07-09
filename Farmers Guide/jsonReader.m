@@ -81,7 +81,7 @@
 
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_delegate finished:@"load" withArray:arr];
+            [_delegate finished:_task withArray:arr andReader:self];
         });
     }];
 }

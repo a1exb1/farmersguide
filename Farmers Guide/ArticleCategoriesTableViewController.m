@@ -52,6 +52,7 @@
 
 -(void)refresh
 {
+    [self.refreshControl beginRefreshing];
     jsonReader *reader = [[jsonReader alloc] init];
     reader.delegate = (id)self;
     [reader jsonAsyncRequestWithDelegateAndUrl:@"http://www.bechmann.co.uk/fg/GetJSData.aspx?dt=Categories&id=1"];
@@ -105,10 +106,11 @@
     
     ArticlesTableViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"Articles"];
     view.categoryID = [[category objectForKey:@"CategoryID"] intValue];
+    view.categoryName = [category objectForKey:@"Category"];
     [self.navigationController pushViewController:view animated:YES];
 }
 
-- (void) finished:(NSString *)status withArray:(NSArray *)array
+- (void) finished:(NSString *)task withArray:(NSArray *)array andReader:(jsonReader*)reader
 {
     _cellsArray = array;
     [self.refreshControl endRefreshing];

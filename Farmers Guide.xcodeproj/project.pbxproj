@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E40AEBAA196D84330037AE44 /* jsonReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E40AEBA9196D84330037AE44 /* jsonReader.m */; };
+		E40AEBB2196D9DCC0037AE44 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = E40AEBAF196D9DCC0037AE44 /* UIScrollView+SVInfiniteScrolling.m */; };
+		E40AEBB3196D9DCC0037AE44 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E40AEBB1196D9DCC0037AE44 /* UIScrollView+SVPullToRefresh.m */; };
 		E4ABFA9B196D562D00ECEC5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9A196D562D00ECEC5F /* Foundation.framework */; };
 		E4ABFA9D196D562D00ECEC5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9C196D562D00ECEC5F /* CoreGraphics.framework */; };
 		E4ABFA9F196D562D00ECEC5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9E196D562D00ECEC5F /* UIKit.framework */; };
@@ -53,6 +55,11 @@
 /* Begin PBXFileReference section */
 		E40AEBA8196D84330037AE44 /* jsonReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsonReader.h; sourceTree = "<group>"; };
 		E40AEBA9196D84330037AE44 /* jsonReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jsonReader.m; sourceTree = "<group>"; };
+		E40AEBAD196D9DCC0037AE44 /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		E40AEBAE196D9DCC0037AE44 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		E40AEBAF196D9DCC0037AE44 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		E40AEBB0196D9DCC0037AE44 /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		E40AEBB1196D9DCC0037AE44 /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		E4ABFA97196D562D00ECEC5F /* Farmers Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmers Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ABFA9A196D562D00ECEC5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4ABFA9C196D562D00ECEC5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,6 +128,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E40AEBAB196D9DC20037AE44 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				E40AEBAC196D9DCC0037AE44 /* SVPullToRefresh */,
+			);
+			name = plugins;
+			sourceTree = "<group>";
+		};
+		E40AEBAC196D9DCC0037AE44 /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				E40AEBAD196D9DCC0037AE44 /* SVPullToRefresh.h */,
+				E40AEBAE196D9DCC0037AE44 /* UIScrollView+SVInfiniteScrolling.h */,
+				E40AEBAF196D9DCC0037AE44 /* UIScrollView+SVInfiniteScrolling.m */,
+				E40AEBB0196D9DCC0037AE44 /* UIScrollView+SVPullToRefresh.h */,
+				E40AEBB1196D9DCC0037AE44 /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
 		E4ABFA8E196D562D00ECEC5F = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +181,7 @@
 		E4ABFAA0196D562D00ECEC5F /* Farmers Guide */ = {
 			isa = PBXGroup;
 			children = (
+				E40AEBAB196D9DC20037AE44 /* plugins */,
 				E4ABFAD6196D57D300ECEC5F /* ViewControllers */,
 				E4ABFAD2196D566000ECEC5F /* Tools */,
 				E4ABFAA9196D562D00ECEC5F /* AppDelegate.h */,
@@ -421,6 +449,8 @@
 				E4ABFAAB196D562D00ECEC5F /* AppDelegate.m in Sources */,
 				E4ABFAA7196D562D00ECEC5F /* main.m in Sources */,
 				E4ABFB0C196D69FB00ECEC5F /* WeatherDetailViewController.m in Sources */,
+				E40AEBB3196D9DCC0037AE44 /* UIScrollView+SVPullToRefresh.m in Sources */,
+				E40AEBB2196D9DCC0037AE44 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				E4ABFB09196D69E900ECEC5F /* WeatherMasterTableViewController.m in Sources */,
 				E4ABFAD5196D567300ECEC5F /* DetailViewManager.m in Sources */,
 				E4ABFAE3196D58CD00ECEC5F /* ArticleViewController.m in Sources */,

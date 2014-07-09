@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "jsonReader.h"
+#import "SVPullToRefresh.h"
 
 @interface ArticlesTableViewController : UITableViewController
 
 @property long categoryID;
-@property long articlesLoaded;
+@property NSString *categoryName;
+@property long loadedArticles;
+@property NSMutableArray *cells;
+
+-(IBAction)refresh;
 
 @end
