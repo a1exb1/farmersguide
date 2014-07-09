@@ -35,6 +35,8 @@
 		E4ABFB01196D64B100ECEC5F /* 682-weather-partly-cloudy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ABFAFF196D64B100ECEC5F /* 682-weather-partly-cloudy@2x.png */; };
 		E4ABFB04196D658D00ECEC5F /* 874-newspaper-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ABFB02196D658D00ECEC5F /* 874-newspaper-selected.png */; };
 		E4ABFB05196D658D00ECEC5F /* 874-newspaper-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ABFB03196D658D00ECEC5F /* 874-newspaper-selected@2x.png */; };
+		E4ABFB09196D69E900ECEC5F /* WeatherMasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFB08196D69E900ECEC5F /* WeatherMasterTableViewController.m */; };
+		E4ABFB0C196D69FB00ECEC5F /* WeatherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFB0B196D69FB00ECEC5F /* WeatherDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,10 @@
 		E4ABFAFF196D64B100ECEC5F /* 682-weather-partly-cloudy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "682-weather-partly-cloudy@2x.png"; sourceTree = "<group>"; };
 		E4ABFB02196D658D00ECEC5F /* 874-newspaper-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "874-newspaper-selected.png"; sourceTree = "<group>"; };
 		E4ABFB03196D658D00ECEC5F /* 874-newspaper-selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "874-newspaper-selected@2x.png"; sourceTree = "<group>"; };
+		E4ABFB07196D69E900ECEC5F /* WeatherMasterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherMasterTableViewController.h; sourceTree = "<group>"; };
+		E4ABFB08196D69E900ECEC5F /* WeatherMasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherMasterTableViewController.m; sourceTree = "<group>"; };
+		E4ABFB0A196D69FB00ECEC5F /* WeatherDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDetailViewController.h; sourceTree = "<group>"; };
+		E4ABFB0B196D69FB00ECEC5F /* WeatherDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +209,7 @@
 		E4ABFAD6196D57D300ECEC5F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E4ABFB06196D69BC00ECEC5F /* weather */,
 				E4ABFAD7196D57DE00ECEC5F /* Articles */,
 			);
 			name = ViewControllers;
@@ -282,6 +289,17 @@
 				E4ABFAFF196D64B100ECEC5F /* 682-weather-partly-cloudy@2x.png */,
 			);
 			name = normal;
+			sourceTree = "<group>";
+		};
+		E4ABFB06196D69BC00ECEC5F /* weather */ = {
+			isa = PBXGroup;
+			children = (
+				E4ABFB07196D69E900ECEC5F /* WeatherMasterTableViewController.h */,
+				E4ABFB08196D69E900ECEC5F /* WeatherMasterTableViewController.m */,
+				E4ABFB0A196D69FB00ECEC5F /* WeatherDetailViewController.h */,
+				E4ABFB0B196D69FB00ECEC5F /* WeatherDetailViewController.m */,
+			);
+			name = weather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +414,8 @@
 				E4ABFAEF196D62A900ECEC5F /* Tools.m in Sources */,
 				E4ABFAAB196D562D00ECEC5F /* AppDelegate.m in Sources */,
 				E4ABFAA7196D562D00ECEC5F /* main.m in Sources */,
+				E4ABFB0C196D69FB00ECEC5F /* WeatherDetailViewController.m in Sources */,
+				E4ABFB09196D69E900ECEC5F /* WeatherMasterTableViewController.m in Sources */,
 				E4ABFAD5196D567300ECEC5F /* DetailViewManager.m in Sources */,
 				E4ABFAE3196D58CD00ECEC5F /* ArticleViewController.m in Sources */,
 			);

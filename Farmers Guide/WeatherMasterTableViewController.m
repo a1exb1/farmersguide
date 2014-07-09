@@ -1,18 +1,18 @@
 //
-//  ArticleCategoriesTableViewController.m
+//  WeatherMasterTableViewController.m
 //  Farmers Guide
 //
 //  Created by Alex Bechmann on 09/07/14.
 //  Copyright (c) 2014 Bechmann Limited. All rights reserved.
 //
 
-#import "ArticleCategoriesTableViewController.h"
+#import "WeatherMasterTableViewController.h"
 
-@interface ArticleCategoriesTableViewController ()
+@interface WeatherMasterTableViewController ()
 
 @end
 
-@implementation ArticleCategoriesTableViewController
+@implementation WeatherMasterTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -25,9 +25,9 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    DetailViewManager *detailViewManager = (DetailViewManager*)self.splitViewController.delegate;
-    ArticleViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"Article"];
-    detailViewManager.detailViewController = view;
+//    DetailViewManager *detailViewManager = (DetailViewManager*)self.splitViewController.delegate;
+//    WeatherDetailViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"WeatherDetail"];
+//    detailViewManager.detailViewController = view;
 }
 
 - (void)viewDidLoad
@@ -39,8 +39,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"874-newspaper-selected.png"] imageWithRenderingMode:UIImageRenderingModeAutomatic]];
 }
 
 - (void)didReceiveMemoryWarning

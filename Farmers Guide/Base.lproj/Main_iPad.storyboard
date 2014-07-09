@@ -23,6 +23,24 @@
             </objects>
             <point key="canvasLocation" x="260" y="649"/>
         </scene>
+        <!--Weather Detail View Controller-->
+        <scene sceneID="sSk-pV-Ba0">
+            <objects>
+                <viewController storyboardIdentifier="WeatherDetail" id="28C-h7-MW2" customClass="WeatherDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f6w-kS-EA4"/>
+                        <viewControllerLayoutGuide type="bottom" id="hbl-40-uC6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F79-b8-C3w">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMI-6F-lYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="267" y="1890"/>
+        </scene>
         <!--Article Categories Table View Controller - Categories-->
         <scene sceneID="ayB-5N-OAQ">
             <objects>
@@ -133,10 +151,10 @@
             </objects>
             <point key="canvasLocation" x="260" y="-373"/>
         </scene>
-        <!--Table View Controller - Root View Controller-->
+        <!--Weather Master Table View Controller - Weather-->
         <scene sceneID="mRu-F8-hSl">
             <objects>
-                <tableViewController id="9bA-3l-gUd" sceneMemberID="viewController">
+                <tableViewController id="9bA-3l-gUd" customClass="WeatherMasterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="k1Q-2Q-31y">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +174,7 @@
                             <outlet property="delegate" destination="9bA-3l-gUd" id="BAs-dG-W8R"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="rwX-wS-o1Q"/>
+                    <navigationItem key="navigationItem" title="Weather" id="rwX-wS-o1Q"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8A-Tx-is6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

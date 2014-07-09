@@ -52,6 +52,8 @@
     // and if so, add it to the toolbar.
     if (_navigationPaneBarButtonItem)
         self.navigationItem.leftBarButtonItem = self.navigationPaneBarButtonItem;
+    
+    self.title = @"Article";
 }
 
 - (void)didReceiveMemoryWarning
