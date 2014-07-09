@@ -9,7 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ArticleViewController.h"
 #import "ArticlesTableViewController.h"
+#import "jsonReader.h"
 
 @interface ArticleCategoriesTableViewController : UITableViewController
+
+@property NSArray *cellsArray;
+
+-(IBAction)refresh;
 
 @end

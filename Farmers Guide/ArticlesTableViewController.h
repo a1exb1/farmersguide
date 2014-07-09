@@ -10,4 +10,7 @@
 
 @interface ArticlesTableViewController : UITableViewController
 
+@property long categoryID;
+@property long articlesLoaded;
+
 @end

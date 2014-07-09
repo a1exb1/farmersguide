@@ -27,6 +27,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if (_navigationPaneBarButtonItem)
+        self.navigationItem.leftBarButtonItem = self.navigationPaneBarButtonItem;
+    
+    self.title = @"Weather";
+}
+
+- (void)setNavigationPaneBarButtonItem:(UIBarButtonItem *)navigationPaneBarButtonItem
+{
+    if (navigationPaneBarButtonItem != _navigationPaneBarButtonItem) {
+        if (navigationPaneBarButtonItem)
+            self.navigationItem.leftBarButtonItem = navigationPaneBarButtonItem;
+        else
+            self.navigationItem.leftBarButtonItem = nil;
+        
+        _navigationPaneBarButtonItem = navigationPaneBarButtonItem;
+    }
 }
 
 - (void)didReceiveMemoryWarning
