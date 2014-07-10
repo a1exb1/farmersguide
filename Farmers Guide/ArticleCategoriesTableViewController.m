@@ -52,7 +52,7 @@
 
 -(void)refresh
 {
-    [self.refreshControl beginRefreshing];
+    //[self.refreshControl beginRefreshing];
     jsonReader *reader = [[jsonReader alloc] init];
     reader.delegate = (id)self;
     [reader jsonAsyncRequestWithDelegateAndUrl:@"http://www.bechmann.co.uk/fg/GetJSData.aspx?dt=Categories&id=1"];

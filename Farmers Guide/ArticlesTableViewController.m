@@ -38,11 +38,11 @@
         // append data to data source, insert new cells at the end of table view
         // call [tableView.infiniteScrollingView stopAnimating] when done
         if (weakSelf.shouldScroll) {
-            
+            weakSelf.tableView.infiniteScrollingView.hidden = NO;
             jsonReader *reader = [[jsonReader alloc] init];
             reader.delegate = (id)weakSelf;
             reader.task = @"add";
-            NSString *url = [NSString stringWithFormat:@"http://www.bechmann.co.uk/fg/GetJSData.aspx?dt=CategoryArticles&id=%li&start=%lu&rows=20", weakSelf.categoryID, (unsigned long)([weakSelf.cells count])];
+            NSString *url = [NSString stringWithFormat:@"http://www.bechmann.co.uk/fg/GetJSData.aspx?dt=CategoryArticles&id=%li&start=%lu&rows=20", weakSelf.categoryID, ((unsigned long)([weakSelf.cells count]) + 1)];
             [reader jsonAsyncRequestWithDelegateAndUrl:url];
         }
         else{
@@ -71,6 +71,11 @@
         _shouldScroll = NO;
     }
     
+    if(_shouldScroll)
+        NSLog(@"true");
+    else{
+        NSLog(@"false");
+    }
     
 }
 
@@ -135,6 +140,11 @@
 {
     [self.refreshControl endRefreshing];
     [self.tableView.infiniteScrollingView stopAnimating];
+    self.tableView.infiniteScrollingView.hidden = YES;
+    for (UIView *view in self.tableView.infiniteScrollingView.subviews)
+    {
+        view.hidden = YES;
+    }
     
     NSMutableArray *arr = [[NSMutableArray alloc] initWithArray:array];
     
@@ -142,7 +152,7 @@
         [self refreshFromArray:arr];
     
     else if([reader.task isEqualToString:@"add"])
-            [self addToArray:arr];
+        [self addToArray:arr];
     
     [self.tableView reloadData];
 }
