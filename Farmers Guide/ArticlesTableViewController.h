@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "jsonReader.h"
 #import "SVPullToRefresh.h"
+#import "ArticleViewController.h"
 
 @interface ArticlesTableViewController : UITableViewController
 
@@ -17,6 +18,7 @@
 @property long loadedArticles;
 @property NSMutableArray *cells;
 @property bool shouldScroll;
+@property NSMutableArray *images;
 
 -(IBAction)refresh;
 

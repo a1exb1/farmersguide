@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "DetailViewManager.h"
 
-@interface ArticleViewController : UIViewController <SubstitutableDetailViewController>
+@interface ArticleViewController : UIViewController <SubstitutableDetailViewController, UIWebViewDelegate>
 
 @property (nonatomic, strong) UIBarButtonItem *navigationPaneBarButtonItem;
+@property long articleID;
+@property NSString *articleTitle;
+@property UIImageView *adView;
 
 @end

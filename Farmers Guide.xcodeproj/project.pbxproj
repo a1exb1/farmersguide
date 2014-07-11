@@ -40,6 +40,8 @@
 		E4ABFB05196D658D00ECEC5F /* 874-newspaper-selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4ABFB03196D658D00ECEC5F /* 874-newspaper-selected@2x.png */; };
 		E4ABFB09196D69E900ECEC5F /* WeatherMasterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFB08196D69E900ECEC5F /* WeatherMasterTableViewController.m */; };
 		E4ABFB0C196D69FB00ECEC5F /* WeatherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4ABFB0B196D69FB00ECEC5F /* WeatherDetailViewController.m */; };
+		E4F9CE4F1970244000C68A8D /* submit_ad.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9CE4E1970244000C68A8D /* submit_ad.png */; };
+		E4F9CE541970357C00C68A8D /* ad3.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F9CE531970357C00C68A8D /* ad3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		E4ABFB08196D69E900ECEC5F /* WeatherMasterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherMasterTableViewController.m; sourceTree = "<group>"; };
 		E4ABFB0A196D69FB00ECEC5F /* WeatherDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDetailViewController.h; sourceTree = "<group>"; };
 		E4ABFB0B196D69FB00ECEC5F /* WeatherDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDetailViewController.m; sourceTree = "<group>"; };
+		E4F9CE4E1970244000C68A8D /* submit_ad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = submit_ad.png; sourceTree = "<group>"; };
+		E4F9CE531970357C00C68A8D /* ad3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ad3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +268,7 @@
 		E4ABFAE7196D61F800ECEC5F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E4F9CE501970244700C68A8D /* ads */,
 				E4ABFAFC196D64A200ECEC5F /* weather */,
 				E4ABFAF0196D637A00ECEC5F /* articles */,
 				E4ABFAE8196D61FE00ECEC5F /* menu */,
@@ -333,6 +338,15 @@
 				E4ABFB0B196D69FB00ECEC5F /* WeatherDetailViewController.m */,
 			);
 			name = weather;
+			sourceTree = "<group>";
+		};
+		E4F9CE501970244700C68A8D /* ads */ = {
+			isa = PBXGroup;
+			children = (
+				E4F9CE531970357C00C68A8D /* ad3.png */,
+				E4F9CE4E1970244000C68A8D /* submit_ad.png */,
+			);
+			name = ads;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F9CE541970357C00C68A8D /* ad3.png in Resources */,
 				E4ABFB01196D64B100ECEC5F /* 682-weather-partly-cloudy@2x.png in Resources */,
 				E4ABFB05196D658D00ECEC5F /* 874-newspaper-selected@2x.png in Resources */,
 				E4ABFB00196D64B100ECEC5F /* 682-weather-partly-cloudy.png in Resources */,
@@ -420,6 +435,7 @@
 				E4ABFAEB196D620A00ECEC5F /* 1099-list-1-toolbar-selected.png in Resources */,
 				E4ABFAAE196D562D00ECEC5F /* Main_iPhone.storyboard in Resources */,
 				E4ABFB04196D658D00ECEC5F /* 874-newspaper-selected.png in Resources */,
+				E4F9CE4F1970244000C68A8D /* submit_ad.png in Resources */,
 				E4ABFAEC196D620A00ECEC5F /* 1099-list-1-toolbar-selected@2x.png in Resources */,
 				E4ABFAFA196D640000ECEC5F /* 874-newspaper@2x.png in Resources */,
 				E4ABFAA5196D562D00ECEC5F /* InfoPlist.strings in Resources */,

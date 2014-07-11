@@ -23,6 +23,8 @@
     return self;
 }
 
+#define kBgQueue dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -49,6 +51,8 @@
             [weakSelf.tableView.infiniteScrollingView stopAnimating];
         }
     }];
+    
+    _images = [[NSMutableArray alloc] init];
 }
 
 - (void)scrollViewDidScroll: (UIScrollView*)scrollView {
@@ -69,14 +73,7 @@
             view.hidden = YES;
         }
         _shouldScroll = NO;
-    }
-    
-    if(_shouldScroll)
-        NSLog(@"true");
-    else{
-        NSLog(@"false");
-    }
-    
+    }    
 }
 
 -(void)loadMore
@@ -126,15 +123,37 @@
     // Configure the cell...
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     
-    NSDictionary *category = [_cells objectAtIndex:indexPath.row]; // crash here  [__NSArrayM objectAtIndex:]: index 15 beyond bounds for empty array'
+    if([_cells count] >= indexPath.row ){
+        NSDictionary *category = [_cells objectAtIndex:indexPath.row]; // crash here  [__NSArrayM objectAtIndex:]: index 15 beyond bounds for empty array'
 
-    cell.textLabel.text = [category objectForKey:@"Title"];
-    //cell.detailTextLabel.text = [category objectForKey:@"Title"];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //NSString *url = [NSString stringWithFormat:@"http://www.farmersguide.co.uk/content/img/thumbs/%@", [category objectForKey:@"Thumbnail"]];
+        //cell.imageView.image =  [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+        
+        for (NSDictionary *d in _images)
+        {
+            if([d valueForKey:[category objectForKey:@"ArticleID"]] != nil)
+            {
+                cell.imageView.image = [d objectForKey:[category objectForKey:@"ArticleID"]];
+            }
+        }
+        
+        //cell.imageView.frame = CGRectMake(0, 0, 20, 50);
+        cell.imageView.center = cell.imageView.superview.center;
+        cell.textLabel.text = [category objectForKey:@"Title"];
+        cell.textLabel.font = [UIFont fontWithName:nil size:12];
+        //cell.detailTextLabel.text = [category objectForKey:@"Title"];
+        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    
     
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
 
 - (void) finished:(NSString *)task withArray:(NSArray *)array andReader:(jsonReader*)reader
 {
@@ -155,6 +174,7 @@
         [self addToArray:arr];
     
     [self.tableView reloadData];
+    [self loadImages];
 }
 
 -(void)refreshFromArray: (NSMutableArray*)arr
@@ -168,6 +188,42 @@
     for (id object in arr){
         [_cells addObject:object];
     }
+}
+
+-(void)loadImages
+{
+    for (NSMutableDictionary *obj in _cells)
+    {
+        //if (![[obj objectForKey:@"hasImg"] isEqualToString:@"true"]) {
+            NSString *url = [NSString stringWithFormat:@"http://www.farmersguide.co.uk/content/img/thumbs/%@", [obj objectForKey:@"Thumbnail"]];
+            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+            if (imgData) {
+                UIImage *image = [UIImage imageWithData:imgData];
+                if (image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+                        NSString *key = [NSString stringWithFormat:@"%@", [obj objectForKey:@"ArticleID"]];
+                        dict[key] = image;
+                        [_images addObject:dict];
+                        //NSString *hasObj = @"true";
+                        //obj[@"hasImg"] = hasObj;
+                        [self.tableView reloadData];
+                    });
+                }
+            }
+        //}
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *article = [_cells objectAtIndex:indexPath.row];
+    
+    DetailViewManager *detailViewManager = (DetailViewManager*)self.splitViewController.delegate;
+    ArticleViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"Article"];
+    view.articleID = [[article objectForKey:@"ArticleID"] intValue];
+    view.articleTitle = [article objectForKey:@"Title"];
+    detailViewManager.detailViewController = view;
 }
 
 @end

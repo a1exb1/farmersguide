@@ -7,8 +7,11 @@
 //
 
 #import "ArticleViewController.h"
+#import "Tools.h"
 
 @interface ArticleViewController ()
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
@@ -53,8 +56,64 @@
     if (_navigationPaneBarButtonItem)
         self.navigationItem.leftBarButtonItem = self.navigationPaneBarButtonItem;
     
-    self.title = @"Article";
+    self.title = self.articleTitle;
+    self.webView.delegate = self;
+    
+    NSString *mobilizer = @"http://mobilizer.instapaper.com/m?u=";
+    mobilizer = @"";
+    NSString *urlString = [NSString stringWithFormat:@"%@http://www.bechmann.co.uk/fg/GetJSData.aspx?id=%ld",mobilizer, self.articleID];
+    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:
+                 NSASCIIStringEncoding];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:requestObj];
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self setFrame];
+    
+}
+
+-(void)setFrame{
+    
+    float p =  self.view.frame.size.width / 768;
+    p = p * 100;
+
+    [_adView removeFromSuperview];
+    _adView = [[UIImageView alloc] initWithFrame:CGRectMake(-1, self.view.frame.size.height - (p-1), self.view.frame.size.width + 2, p)];
+    _adView.image = [UIImage imageNamed:@"ad3.png"];
+    _adView.layer.borderColor = [Tools colorFromHexString:@"#cccccc"].CGColor;
+    _adView.layer.borderWidth = 1;
+    [self.webView addSubview:_adView];
+    self.webView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - (p-1));
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self setFrame];
+    
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    NSLog(@"Error : %ld, %@", (long)webView.tag, error);
+    
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    
+}
+
+
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    NSLog(@"done");
+    
+}
+
 
 - (void)didReceiveMemoryWarning
 {
