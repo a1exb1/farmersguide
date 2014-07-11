@@ -15,5 +15,6 @@
 @property long articleID;
 @property NSString *articleTitle;
 @property UIImageView *adView;
+@property NSString *mobilizer;
 
 @end

@@ -28,6 +28,8 @@
 
 - (void)setNavigationPaneBarButtonItem:(UIBarButtonItem *)navigationPaneBarButtonItem
 {
+    self.navigationItem.leftBarButtonItems = nil;
+    
     if (navigationPaneBarButtonItem != _navigationPaneBarButtonItem) {
         if (navigationPaneBarButtonItem)
             self.navigationItem.leftBarButtonItem = navigationPaneBarButtonItem;
@@ -59,9 +61,20 @@
     self.title = self.articleTitle;
     self.webView.delegate = self;
     
-    NSString *mobilizer = @"http://mobilizer.instapaper.com/m?u=";
-    mobilizer = @"";
-    NSString *urlString = [NSString stringWithFormat:@"%@http://www.bechmann.co.uk/fg/GetJSData.aspx?id=%ld",mobilizer, self.articleID];
+    _mobilizer = @"";
+    [self loadArticle];
+}
+
+-(void)mobilize
+{
+    _mobilizer = @"http://mobilizer.instapaper.com/m?u=";
+    _webView.hidden = YES;
+    [self loadArticle];
+}
+
+
+-(void)loadArticle{
+    NSString *urlString = [NSString stringWithFormat:@"%@http://www.bechmann.co.uk/fg/GetJSData.aspx?id=%ld",_mobilizer, self.articleID];
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:
                  NSASCIIStringEncoding];
     NSURL *url = [NSURL URLWithString:urlString];
@@ -87,6 +100,22 @@
     _adView.layer.borderWidth = 1;
     [self.webView addSubview:_adView];
     self.webView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - (p-1));
+    
+    UIBarButtonItem *zoomInBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"736-zoom-in-toolbar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(zoomIn)];
+    UIBarButtonItem *zoomOutBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"737-zoom-out-toolbar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(zoomIn)];
+    UIBarButtonItem *favouriteBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"726-star-toolbar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(setFrame)];
+    UIBarButtonItem *mobilizeBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"810-document-2-toolbar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(mobilize)];
+    
+    
+    if([Tools isOrientationLandscape]){
+        self.navigationItem.leftBarButtonItems = [[NSArray alloc] initWithObjects: favouriteBtn, mobilizeBtn, nil];
+        
+        self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:zoomInBtn, zoomOutBtn,  nil];
+    }
+    else{
+        self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:zoomInBtn, zoomOutBtn, favouriteBtn, mobilizeBtn,  nil];
+        
+    }
 }
 
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
@@ -98,19 +127,26 @@
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     NSLog(@"Error : %ld, %@", (long)webView.tag, error);
+    [Tools hideLoaderFromView:self.view];
     
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
-    
+    [Tools showLightLoaderWithView:self.view];
 }
 
 
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    NSLog(@"done");
+    [Tools hideLoaderFromView:self.view];
+    _webView.hidden = NO;
+    [NSTimer scheduledTimerWithTimeInterval:0.01
+                                     target:self
+                                   selector:@selector(setFrame)
+                                   userInfo:nil
+                                    repeats:NO];
     
 }
 
