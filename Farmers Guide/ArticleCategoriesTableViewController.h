@@ -10,6 +10,7 @@
 #import "ArticleViewController.h"
 #import "ArticlesTableViewController.h"
 #import "jsonReader.h"
+#import "Tools.h"
 
 @interface ArticleCategoriesTableViewController : UITableViewController
 

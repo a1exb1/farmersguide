@@ -119,7 +119,7 @@
 {
     // If the barButtonItem does not have a title (or image) adding it to a toolbar
     // will do nothing.
-    barButtonItem.title = @"Navigation";
+    //barButtonItem.title = @"Navigation";
     barButtonItem.image = [UIImage imageNamed:@"1099-list-1-toolbar-selected"];
     self.navigationPaneButtonItem = barButtonItem;
     self.navigationPopoverController = pc;

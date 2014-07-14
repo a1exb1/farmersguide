@@ -49,7 +49,9 @@
     _section2Array = [[NSMutableArray alloc] init];
     
     //SECTION
-    NSArray *cell = [[NSArray alloc]initWithObjects:@"", @"Favourites", @"", @"favourites", nil];
+    UIImage *img = [UIImage imageNamed:@"726-star-toolbar-selected"];
+    img = [Tools colorAnImage:[UIColor yellowColor]: img];
+    NSArray *cell = [[NSArray alloc]initWithObjects:img, @"Favourites", @"", @"favourites", nil];
     [_section2Array addObject:cell];
     
     [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"874-newspaper-selected.png"] imageWithRenderingMode:UIImageRenderingModeAutomatic]];
@@ -101,7 +103,7 @@
     else{
         cell.accessibilityValue = [[[_cellsArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row] objectAtIndex: 3];
         cell.detailTextLabel.text = [[[_cellsArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row] objectAtIndex: 2];
-        cell.imageView.image = [UIImage imageNamed:[[[_cellsArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row] objectAtIndex: 0]];
+        cell.imageView.image = [[[_cellsArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row] objectAtIndex: 0];
         cell.textLabel.text = [[[_cellsArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row] objectAtIndex: 1];
 
     }
