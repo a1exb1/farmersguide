@@ -129,6 +129,7 @@
         //NSString *url = [NSString stringWithFormat:@"http://www.farmersguide.co.uk/content/img/thumbs/%@", [category objectForKey:@"Thumbnail"]];
         //cell.imageView.image =  [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
         
+        cell.imageView.image = nil;
         for (NSDictionary *d in _images)
         {
             if([d valueForKey:[category objectForKey:@"ArticleID"]] != nil)
@@ -136,6 +137,7 @@
                 cell.imageView.image = [d objectForKey:[category objectForKey:@"ArticleID"]];
             }
         }
+        
         
         //cell.imageView.frame = CGRectMake(0, 0, 20, 50);
         cell.imageView.center = cell.imageView.superview.center;
@@ -194,9 +196,14 @@
 {
     for (NSMutableDictionary *obj in _cells)
     {
-        //if (![[obj objectForKey:@"hasImg"] isEqualToString:@"true"]) {
-            NSString *url = [NSString stringWithFormat:@"http://www.farmersguide.co.uk/content/img/thumbs/%@", [obj objectForKey:@"Thumbnail"]];
-            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        NSString *urlString = [NSString stringWithFormat:@"http://www.farmersguide.co.uk/content/img/thumbs/%@", [obj objectForKey:@"Thumbnail"]];
+        NSURL *url = [NSURL URLWithString: urlString];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10];
+        
+        NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+        [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+            
+            NSData *imgData = data;
             if (imgData) {
                 UIImage *image = [UIImage imageWithData:imgData];
                 if (image) {
@@ -211,7 +218,11 @@
                     });
                 }
             }
-        //}
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //[_delegate finished:@"load" withArray:arr];
+            });
+        }];
     }
 }
 

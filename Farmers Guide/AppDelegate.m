@@ -12,6 +12,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    UIWindow* mWindow = [[UIApplication sharedApplication] delegate].window;
+    mWindow.tintColor = [Tools colorFromHexString:@"#054189"] ;
+    
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     
     self.detailViewManager = [[DetailViewManager alloc] init];

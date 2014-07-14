@@ -134,6 +134,7 @@
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
     [Tools showLightLoaderWithView:self.view];
+    //webView.hidden = YES;
 }
 
 

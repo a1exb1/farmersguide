@@ -45,6 +45,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    
+    _section2Array = [[NSMutableArray alloc] init];
+    
+    //SECTION
+    NSArray *cell = [[NSArray alloc]initWithObjects:@"", @"Favourites", @"", @"favourites", nil];
+    [_section2Array addObject:cell];
+    
     [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"874-newspaper-selected.png"] imageWithRenderingMode:UIImageRenderingModeAutomatic]];
     [self refresh];
     
@@ -69,21 +76,15 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [_cellsArray count];
 }
 
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    UIView *view = [[UIView alloc] init];
-    [view setBackgroundColor:[UIColor clearColor]];
-    return view;
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_cellsArray count];
+    return [[_cellsArray objectAtIndex:section ] count];
 }
 
 
@@ -93,8 +94,18 @@
     // Configure the cell...
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
    
-    NSDictionary *category = [_cellsArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = [category objectForKey:@"Category"];
+    if(indexPath.section == 0){
+        NSDictionary *category = [[_cellsArray objectAtIndex:0] objectAtIndex:indexPath.row];
+        cell.textLabel.text = [category objectForKey:@"Category"];
+    }
+    else{
+        cell.accessibilityValue = [[[_cellsArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row] objectAtIndex: 3];
+        cell.detailTextLabel.text = [[[_cellsArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row] objectAtIndex: 2];
+        cell.imageView.image = [UIImage imageNamed:[[[_cellsArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row] objectAtIndex: 0]];
+        cell.textLabel.text = [[[_cellsArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row] objectAtIndex: 1];
+
+    }
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
@@ -102,7 +113,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *category = [_cellsArray objectAtIndex:indexPath.row];
+    NSDictionary *category = [[_cellsArray objectAtIndex:0] objectAtIndex:indexPath.row];
     
     ArticlesTableViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"Articles"];
     view.categoryID = [[category objectForKey:@"CategoryID"] intValue];
@@ -112,7 +123,7 @@
 
 - (void) finished:(NSString *)task withArray:(NSArray *)array andReader:(jsonReader*)reader
 {
-    _cellsArray = array;
+    _cellsArray = [[NSArray alloc] initWithObjects:array, _section2Array, nil];
     [self.refreshControl endRefreshing];
     [self.tableView reloadData];
 }

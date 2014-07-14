@@ -14,6 +14,7 @@
 @interface ArticleCategoriesTableViewController : UITableViewController
 
 @property NSArray *cellsArray;
+@property NSMutableArray *section2Array;
 
 -(IBAction)refresh;
 
