@@ -11,11 +11,13 @@
 #import "ArticlesTableViewController.h"
 #import "jsonReader.h"
 #import "Tools.h"
+#import "magazineReaderViewController.h"
 
 @interface ArticleCategoriesTableViewController : UITableViewController
 
 @property NSArray *cellsArray;
 @property NSMutableArray *section2Array;
+@property NSMutableArray *section3Array;
 
 -(IBAction)refresh;
 

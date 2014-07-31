@@ -12,6 +12,8 @@
 		E40AEBB3196D9DCC0037AE44 /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E40AEBB1196D9DCC0037AE44 /* UIScrollView+SVPullToRefresh.m */; };
 		E4A22C67198623C400CE5977 /* customCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A22C66198623C400CE5977 /* customCell.m */; };
 		E4A4FC2B198A4829009C93C9 /* magazineReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A4FC2A198A4829009C93C9 /* magazineReaderViewController.m */; };
+		E4A4FC30198A5313009C93C9 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A4FC2E198A5313009C93C9 /* twitter.png */; };
+		E4A4FC33198A569C009C93C9 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A4FC32198A569C009C93C9 /* twitter@2x.png */; };
 		E4ABFA9B196D562D00ECEC5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9A196D562D00ECEC5F /* Foundation.framework */; };
 		E4ABFA9D196D562D00ECEC5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9C196D562D00ECEC5F /* CoreGraphics.framework */; };
 		E4ABFA9F196D562D00ECEC5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9E196D562D00ECEC5F /* UIKit.framework */; };
@@ -83,6 +85,8 @@
 		E4A22C66198623C400CE5977 /* customCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customCell.m; sourceTree = "<group>"; };
 		E4A4FC29198A4829009C93C9 /* magazineReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = magazineReaderViewController.h; sourceTree = "<group>"; };
 		E4A4FC2A198A4829009C93C9 /* magazineReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = magazineReaderViewController.m; sourceTree = "<group>"; };
+		E4A4FC2E198A5313009C93C9 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		E4A4FC32198A569C009C93C9 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
 		E4ABFA97196D562D00ECEC5F /* Farmers Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmers Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ABFA9A196D562D00ECEC5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4ABFA9C196D562D00ECEC5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -308,6 +312,8 @@
 		E4ABFAE7196D61F800ECEC5F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E4A4FC2E198A5313009C93C9 /* twitter.png */,
+				E4A4FC32198A569C009C93C9 /* twitter@2x.png */,
 				E4F9CE591970429F00C68A8D /* farmads */,
 				E4F9CE501970244700C68A8D /* ads */,
 				E4ABFAFC196D64A200ECEC5F /* weather */,
@@ -514,12 +520,14 @@
 				E4ABFAF9196D640000ECEC5F /* 874-newspaper.png in Resources */,
 				E4ABFAB1196D562D00ECEC5F /* Main_iPad.storyboard in Resources */,
 				E4F9CE721970464100C68A8D /* 726-star-toolbar-selected.png in Resources */,
+				E4A4FC30198A5313009C93C9 /* twitter.png in Resources */,
 				E4ABFAB6196D562D00ECEC5F /* Images.xcassets in Resources */,
 				E4F9CE781970468B00C68A8D /* 810-document-2-toolbar.png in Resources */,
 				E4ABFAEB196D620A00ECEC5F /* 1099-list-1-toolbar-selected.png in Resources */,
 				E4ABFAAE196D562D00ECEC5F /* Main_iPhone.storyboard in Resources */,
 				E4F9CE581970429000C68A8D /* 729-top-list-selected@2x.png in Resources */,
 				E4ABFB04196D658D00ECEC5F /* 874-newspaper-selected.png in Resources */,
+				E4A4FC33198A569C009C93C9 /* twitter@2x.png in Resources */,
 				E4F9CE64197043A800C68A8D /* 737-zoom-out-toolbar.png in Resources */,
 				E4F9CE4F1970244000C68A8D /* submit_ad.png in Resources */,
 				E4ABFAEC196D620A00ECEC5F /* 1099-list-1-toolbar-selected@2x.png in Resources */,

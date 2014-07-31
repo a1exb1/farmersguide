@@ -53,6 +53,18 @@
     NSArray *cell = [[NSArray alloc]initWithObjects:img, @"Favourites", @"", @"favourites", nil];
     [_section2Array addObject:cell];
     
+    //new section
+    //_section3Array = [[NSMutableArray alloc] init];
+    
+    //twitter
+    img = [UIImage imageNamed:@"twitter.png"];
+    cell = [[NSArray alloc]initWithObjects:img, @"Twitter", @"", @"twitter", nil];
+    [_section2Array addObject:cell];
+    
+    //read magazine
+    cell = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"874-newspaper.png"], @"Read the magazine", @"", @"magazine", nil];
+    [_section2Array addObject:cell];
+    
     [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"874-newspaper-selected.png"] imageWithRenderingMode:UIImageRenderingModeAutomatic]];
     [self refresh];
     
@@ -114,12 +126,42 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *category = [[_cellsArray objectAtIndex:0] objectAtIndex:indexPath.row];
+    if (indexPath.section == 0) {
+        NSDictionary *category = [[_cellsArray objectAtIndex:0] objectAtIndex:indexPath.row];
+        
+        ArticlesTableViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"Articles"];
+        view.categoryID = [[category objectForKey:@"CategoryID"] intValue];
+        view.categoryName = [category objectForKey:@"Category"];
+        [self.navigationController pushViewController:view animated:YES];
+    }
     
-    ArticlesTableViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"Articles"];
-    view.categoryID = [[category objectForKey:@"CategoryID"] intValue];
-    view.categoryName = [category objectForKey:@"Category"];
-    [self.navigationController pushViewController:view animated:YES];
+    if (indexPath.section == 1) {
+        NSArray *item = [[_cellsArray objectAtIndex:1] objectAtIndex:indexPath.row];
+        
+        DetailViewManager *detailViewManager = (DetailViewManager*)self.splitViewController.delegate;
+        
+        if (indexPath.row == 0) {
+            
+        }
+        
+        if ([[item objectAtIndex:3]isEqualToString:@"magazine"]) {
+            
+            magazineReaderViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"magazineReader"];
+            
+            view.title = @"Farmers Guide Issue #337";
+            view.urlString = @"http://www.newforests.net/wp-content/uploads/2011/01/sample_pdf.pdf";
+
+            detailViewManager.detailViewController = view;
+        }
+        
+        if ([[item objectAtIndex:3]isEqualToString:@"twitter"]) {
+            
+            magazineReaderViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"magazineReader"];
+            view.urlString = @"https://twitter.com/farmersguide";
+            view.title = @"Twitter: #farmersguide";
+            detailViewManager.detailViewController = view;
+        }
+    }
 }
 
 - (void) finished:(NSString *)task withArray:(NSArray *)array andReader:(jsonReader*)reader

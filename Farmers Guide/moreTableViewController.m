@@ -59,7 +59,7 @@
     cell = [[NSArray alloc]initWithObjects:@"", @"Diary dates", @"", @"diary", nil];
     [section addObject:cell];
     
-    cell = [[NSArray alloc]initWithObjects:@"", @"Read the magazine", @"", @"magazine", nil];
+    cell = [[NSArray alloc]initWithObjects:@"", @"Submit a farmad", @"", @"submit", nil];
     [section addObject:cell];
     
     [_cellsArray addObject:section];
@@ -121,11 +121,7 @@
     NSArray *cellArray = [[_cellsArray objectAtIndex:indexPath.section ] objectAtIndex:indexPath.row];
     if ([[cellArray objectAtIndex:3] isEqualToString:@"magazine"]) {
         //
-        magazineReaderViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"magazineReader"];
         
-        DetailViewManager *detailViewManager = (DetailViewManager*)self.splitViewController.delegate;
-
-        detailViewManager.detailViewController = view;
         
     }
 }

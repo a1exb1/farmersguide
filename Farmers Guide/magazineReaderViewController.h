@@ -13,5 +13,7 @@
 @interface magazineReaderViewController : UIViewController <SubstitutableDetailViewController, UIWebViewDelegate>
 
 @property (nonatomic, strong) UIBarButtonItem *navigationPaneBarButtonItem;
+@property NSString *urlString;
+
 
 @end

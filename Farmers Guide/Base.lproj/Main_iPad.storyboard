@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="267" y="1890"/>
         </scene>
-        <!--Article Categories Table View Controller - Categories-->
+        <!--Article Categories Table View Controller - Read-->
         <scene sceneID="ayB-5N-OAQ">
             <objects>
                 <tableViewController id="A2f-nc-Z2g" customClass="ArticleCategoriesTableViewController" sceneMemberID="viewController">
@@ -108,7 +108,7 @@
                             <outlet property="delegate" destination="A2f-nc-Z2g" id="prd-ti-c5O"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Categories" id="zLM-XD-6zm"/>
+                    <navigationItem key="navigationItem" title="Read" id="zLM-XD-6zm"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="roU-yB-oYQ">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
@@ -243,11 +243,11 @@
             </objects>
             <point key="canvasLocation" x="1428" y="-3857"/>
         </scene>
-        <!--Navigation Controller - Articles-->
+        <!--Navigation Controller - Read-->
         <scene sceneID="FWk-OU-P5y">
             <objects>
                 <navigationController id="qLy-Co-yIP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Articles" image="874-newspaper.png" id="2Tc-HK-aE5"/>
+                    <tabBarItem key="tabBarItem" title="Read" image="874-newspaper.png" id="2Tc-HK-aE5"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="qFh-L5-1qc">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

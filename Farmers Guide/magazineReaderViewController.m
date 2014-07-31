@@ -24,6 +24,10 @@
     return self;
 }
 
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    [self.webView setNeedsUpdateConstraints];
+}
+
 - (void)setNavigationPaneBarButtonItem:(UIBarButtonItem *)navigationPaneBarButtonItem
 {
     self.navigationItem.leftBarButtonItems = nil;
@@ -47,14 +51,13 @@
         self.navigationItem.leftBarButtonItem = self.navigationPaneBarButtonItem;
     
     self.webView.delegate = self;
-    self.title = @"Farmers Guide Issue #337";
     [self loadArticle];
 }
 -(void)loadArticle{
-    NSString *urlString = [NSString stringWithFormat:@"http://www.newforests.net/wp-content/uploads/2011/01/sample_pdf.pdf"];
-    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:
+    
+    _urlString = [_urlString stringByAddingPercentEscapesUsingEncoding:
                  NSASCIIStringEncoding];
-    NSURL *url = [NSURL URLWithString:urlString];
+    NSURL *url = [NSURL URLWithString:_urlString];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
 }
