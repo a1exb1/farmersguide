@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DetailViewManager.h"
+#import "Tools.h"
 
 @interface magazineReaderViewController : UIViewController <SubstitutableDetailViewController, UIWebViewDelegate>
 

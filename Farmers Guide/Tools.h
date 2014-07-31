@@ -76,6 +76,8 @@
 
 +(NSString *)base64Decode:(NSString*)encodedString;
 
+//+(void)defaultDetailReaderHandlerOnViewDidLoadWithVC:(id)vc andButton:(UIBarButtonItem*)button;
+//+(void)defaultDetailReaderHandlerOnSetNavigationButton;
 
 
 @end

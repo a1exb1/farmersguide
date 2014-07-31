@@ -24,14 +24,34 @@
     return self;
 }
 
+- (void)setNavigationPaneBarButtonItem:(UIBarButtonItem *)navigationPaneBarButtonItem
+{
+    self.navigationItem.leftBarButtonItems = nil;
+    
+    if (navigationPaneBarButtonItem != _navigationPaneBarButtonItem) {
+        if (navigationPaneBarButtonItem)
+            self.navigationItem.leftBarButtonItem = navigationPaneBarButtonItem;
+        else
+            self.navigationItem.leftBarButtonItem = nil;
+        
+        _navigationPaneBarButtonItem = navigationPaneBarButtonItem;
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if (_navigationPaneBarButtonItem)
+        self.navigationItem.leftBarButtonItem = self.navigationPaneBarButtonItem;
+    
     self.webView.delegate = self;
+    self.title = @"Farmers Guide Issue #337";
+    [self loadArticle];
 }
 -(void)loadArticle{
-    NSString *urlString = [NSString stringWithFormat:@"http://edition.pagesuite-professional.co.uk/launch.aspx?eid=2089178e-b89b-4a36-b360-ad8bb5e40f41"];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.newforests.net/wp-content/uploads/2011/01/sample_pdf.pdf"];
     urlString = [urlString stringByAddingPercentEscapesUsingEncoding:
                  NSASCIIStringEncoding];
     NSURL *url = [NSURL URLWithString:urlString];
@@ -39,6 +59,20 @@
     [self.webView loadRequest:requestObj];
 }
 
+-(void)webViewDidStartLoad:(UIWebView *)webView{
+    self.webView.hidden = YES;
+    [Tools showLightLoaderWithView:self.view];
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    self.webView.hidden = NO;
+    [Tools hideLoaderFromView:self.view];
+}
+
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    self.webView.hidden = NO;
+    [Tools hideLoaderFromView:self.view];
+}
 
 - (void)didReceiveMemoryWarning
 {
