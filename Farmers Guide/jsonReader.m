@@ -69,6 +69,8 @@
 //    } else {
 //        arr = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
 //    }
+    //[Tools showLoaderWithView:(id)self.delegate];
+    
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
 
@@ -82,6 +84,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [_delegate finished:_task withArray:arr andReader:self];
+            //[Tools hideLoaderFromView:(id)self.delegate];
         });
     }];
 }

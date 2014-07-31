@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Tools.h"
 
 @protocol jsonDelegate <NSObject>
 - (void) finished:(NSString *)task withArray:(NSArray *)array andReader:self;

@@ -33,6 +33,9 @@
     if (indexPath) {
         [self.tableView deselectRowAtIndexPath:indexPath animated:animated];
     }
+    
+    [Tools showLoaderWithView:self.view];
+    [self refresh];
 }
 
 - (void)viewDidLoad
@@ -44,7 +47,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-        
+    
+    
+    
     _section2Array = [[NSMutableArray alloc] init];
     
     //SECTION
@@ -66,7 +71,8 @@
     [_section2Array addObject:cell];
     
     [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"874-newspaper-selected.png"] imageWithRenderingMode:UIImageRenderingModeAutomatic]];
-    [self refresh];
+    
+    
     
 }
 
@@ -169,6 +175,7 @@
     _cellsArray = [[NSArray alloc] initWithObjects:array, _section2Array, nil];
     [self.refreshControl endRefreshing];
     [self.tableView reloadData];
+    [Tools hideLoaderFromView:self.view];
 }
 
 /*
