@@ -140,7 +140,7 @@
         }
         
         cell.BMTitle.text = [category objectForKey:@"Title"];
-        cell.BMArticlePreview.text = [category objectForKey:@"Title"];
+        cell.BMArticlePreview.text = [category objectForKey:@"Subtitle"];
         [cell.BMArticlePreview setUserInteractionEnabled:NO];
         //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
