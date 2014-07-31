@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "magazineReaderViewController.h"
+#import "DetailViewManager.h"
 
 @interface moreTableViewController : UITableViewController
 

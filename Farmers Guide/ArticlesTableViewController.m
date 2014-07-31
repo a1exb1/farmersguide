@@ -121,7 +121,8 @@
 {
     
     // Configure the cell...
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    //customCell *cell = [[customCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
+    customCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     if([_cells count] >= indexPath.row ){
         NSDictionary *category = [_cells objectAtIndex:indexPath.row]; // crash here  [__NSArrayM objectAtIndex:]: index 15 beyond bounds for empty array'
@@ -129,21 +130,18 @@
         //NSString *url = [NSString stringWithFormat:@"http://www.farmersguide.co.uk/content/img/thumbs/%@", [category objectForKey:@"Thumbnail"]];
         //cell.imageView.image =  [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
         
-        cell.imageView.image = nil;
+        cell.BMImageView.image = nil;
         for (NSDictionary *d in _images)
         {
             if([d valueForKey:[category objectForKey:@"ArticleID"]] != nil)
             {
-                cell.imageView.image = [d objectForKey:[category objectForKey:@"ArticleID"]];
+                cell.BMImageView.image = [d objectForKey:[category objectForKey:@"ArticleID"]];
             }
         }
         
-        
-        //cell.imageView.frame = CGRectMake(0, 0, 20, 50);
-        cell.imageView.center = cell.imageView.superview.center;
-        cell.textLabel.text = [category objectForKey:@"Title"];
-        cell.textLabel.font = [UIFont fontWithName:nil size:12];
-        //cell.detailTextLabel.text = [category objectForKey:@"Title"];
+        cell.BMTitle.text = [category objectForKey:@"Title"];
+        cell.BMArticlePreview.text = [category objectForKey:@"Title"];
+        [cell.BMArticlePreview setUserInteractionEnabled:NO];
         //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
@@ -154,7 +152,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 82;
 }
 
 - (void) finished:(NSString *)task withArray:(NSArray *)array andReader:(jsonReader*)reader

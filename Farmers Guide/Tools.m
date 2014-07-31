@@ -585,4 +585,35 @@ NSMutableArray *loaderViews;
     
 }
 
++(void)setGlobalNavigationHeaderColorWithNavigationController: (UINavigationController *)view  andTabBar: (UITabBar*)tabBar{
+    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    
+    NSString *theme = @"dark";
+    
+    if([theme isEqualToString:@"dark"])
+    {
+        //status bar
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+        
+        //title colour
+        view.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    }
+    else{
+        //status bar
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+        
+        //title colour
+        view.navigationBar.barStyle = UIBarStyleDefault;
+    }
+    
+    
+    view.navigationBar.barTintColor = [self colorFromHexString:@"#054189"];
+    view.navigationBar.tintColor = [self colorFromHexString:@"#fdff37"];
+    [view.navigationBar setTranslucent:YES];
+    
+    //UIColor *tabCol;
+    //[tabBar setTintColor:tabCol];
+}
+
 @end

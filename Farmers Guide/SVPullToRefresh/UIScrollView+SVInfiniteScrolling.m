@@ -176,7 +176,8 @@ UIEdgeInsets scrollViewOriginalContentInsets;
                           delay:0
                         options:UIViewAnimationOptionAllowUserInteraction|UIViewAnimationOptionBeginFromCurrentState
                      animations:^{
-                         self.scrollView.contentInset = contentInset;
+                         //self.scrollView.contentInset = contentInset;
+                         // this line was removed by me
                      }
                      completion:NULL];
 }

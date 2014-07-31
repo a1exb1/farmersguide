@@ -29,6 +29,8 @@
 
 +(void)setNavigationHeaderColorWithNavigationController: (UINavigationController *)view  andTabBar: (UITabBar*)tabBar andBackground: (UIColor *)bgCol andTint: (UIColor *)tint theme: (NSString *)theme;
 
++(void)setGlobalNavigationHeaderColorWithNavigationController: (UINavigationController *)view  andTabBar: (UITabBar*)tabBar;
+
 +(void)addShadowToViewWithView:(UIView *)view;
 
 +(UIColor *) defaultNavigationBarColour;
@@ -73,5 +75,7 @@
 +(NSDate *) dateRoundedDownTo5Minutes:(NSDate *)dt;
 
 +(NSString *)base64Decode:(NSString*)encodedString;
+
+
 
 @end

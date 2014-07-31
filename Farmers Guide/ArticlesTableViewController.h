@@ -10,6 +10,8 @@
 #import "jsonReader.h"
 #import "SVPullToRefresh.h"
 #import "ArticleViewController.h"
+#import "customCell.h"
+#import "Tools.h"
 
 @interface ArticlesTableViewController : UITableViewController
 

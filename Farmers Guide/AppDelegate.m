@@ -15,6 +15,15 @@
     
     UIWindow* mWindow = [[UIApplication sharedApplication] delegate].window;
     mWindow.tintColor = [Tools colorFromHexString:@"#054189"] ;
+
+    //title colour
+    [UINavigationBar appearance].barStyle = UIStatusBarStyleLightContent;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [UINavigationBar appearance].barTintColor = [Tools colorFromHexString:@"#054189"];
+    [UINavigationBar appearance].tintColor = [Tools colorFromHexString:@"#fdff37"];
+    //[[UINavigationBar appearance] setTranslucent:YES];
+   
+    
     
     UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
     
