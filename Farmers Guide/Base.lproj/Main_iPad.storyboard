@@ -154,8 +154,8 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="682-weather-partly-cloudy.png" translatesAutoresizingMaskIntoConstraints="NO" id="U0s-7h-a90">
-                                            <rect key="frame" x="11" y="12" width="82" height="57"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="82" placeholderIntrinsicHeight="57" image="682-weather-partly-cloudy.png" translatesAutoresizingMaskIntoConstraints="NO" id="U0s-7h-a90">
+                                            <rect key="frame" x="11" y="12" width="91" height="57"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>

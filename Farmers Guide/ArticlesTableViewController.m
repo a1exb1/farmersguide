@@ -131,11 +131,22 @@
         //cell.imageView.image =  [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
         
         cell.BMImageView.image = nil;
+        
         for (NSDictionary *d in _images)
         {
             if([d valueForKey:[category objectForKey:@"ArticleID"]] != nil)
             {
-                cell.BMImageView.image = [d objectForKey:[category objectForKey:@"ArticleID"]];
+                //cell.BMImageView.image = [d objectForKey:[category objectForKey:@"ArticleID"]];
+                UIImageView *v = [[UIImageView alloc] initWithFrame:CGRectMake(15, 11, 88, 59)];
+                v.image =[d objectForKey:[category objectForKey:@"ArticleID"]];
+                for(UIView* sv in cell.subviews){
+                    if ([sv.accessibilityValue isEqualToString:@"img"]) {
+                        [sv removeFromSuperview];
+                    }
+                }
+                v.accessibilityValue = @"img";
+                [cell addSubview:v];
+                
             }
         }
         
