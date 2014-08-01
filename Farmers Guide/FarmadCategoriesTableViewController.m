@@ -1,18 +1,18 @@
 //
-//  FarmadsTableViewController.m
+//  FarmadCategoriesTableViewController.m
 //  Farmers Guide
 //
 //  Created by Alex Bechmann on 01/08/14.
 //  Copyright (c) 2014 Bechmann Limited. All rights reserved.
 //
 
-#import "FarmadsTableViewController.h"
+#import "FarmadCategoriesTableViewController.h"
 
-@interface FarmadsTableViewController ()
+@interface FarmadCategoriesTableViewController ()
 
 @end
 
-@implementation FarmadsTableViewController
+@implementation FarmadCategoriesTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -23,7 +23,6 @@
     return self;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,12 +32,24 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-
+    
     _cellsArray = [[NSMutableArray alloc] init];
-    [_cellsArray addObject:@"Farmad 1"];
-    [_cellsArray addObject:@"Farmad 1"];
-    [_cellsArray addObject:@"Farmad 1"];
-    [_cellsArray addObject:@"Farmad 1"];
+    
+    NSMutableArray *section = [[NSMutableArray alloc] init];
+    [section addObject:@"ATVs/UTVs"];
+    [section addObject:@"Balers & Bale Handling"];
+    [section addObject:@"Beet Equiptment"];
+    [section addObject:@"Boiler Plant, Heating & Ovens"];
+    [section addObject:@"Trailers"];
+    [_cellsArray addObject:section];
+    
+    section = [[NSMutableArray alloc] init];
+    [section addObject:@"Potato Equipment"];
+    [section addObject:@"Ploughs"];
+    [section addObject:@"Beet Equiptment"];
+    [_cellsArray addObject:section];
+    
+    [_cellsArray addObject:section];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,13 +63,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return [_cellsArray count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_cellsArray count];
+    return [[_cellsArray objectAtIndex:section ] count];
 }
 
 
@@ -67,13 +78,68 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    cell.textLabel.text = [[_cellsArray objectAtIndex:indexPath.section]objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = @"Talbot 150kw biomass boiler, fully automatic, c/w augers & 14cu/m hopper.";
-    cell.detailTextLabel.text = @"County: (N Yorks) - Name: RH Metcalfe - Tel: 01765 620640";
+    switch (indexPath.row) {
+        case 0:
+            cell.detailTextLabel.text = @"2";
+            break;
+            
+        case 1:
+            cell.detailTextLabel.text = @"24";
+            break;
+            
+        case 2:
+            cell.detailTextLabel.text = @"14";
+            break;
+            
+        case 3:
+            cell.detailTextLabel.text = @"7";
+            break;
+            
+        default:
+            cell.detailTextLabel.text = @"";
+            break;
+    }
     
     return cell;
 }
 
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    switch (section) {
+        case 0:
+            return @"Machinery";
+            break;
+            
+        default:
+            return @"Farming";
+            break;
+    }
+    
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //FarmadCategoriesTableViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"farmads"];
+    //[self.navigationController pushViewController:view animated:YES];
+    
+    DetailViewManager *manager = (DetailViewManager*)self.splitViewController.delegate;
+    FarmadsDetailViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"farmadsDetail"];
+    manager.detailViewController = view;
+    
+}
+
+/*
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    return cell;
+}
+*/
 
 /*
 // Override to support conditional editing of the table view.

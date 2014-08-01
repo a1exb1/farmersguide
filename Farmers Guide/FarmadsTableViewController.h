@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewManager.h"
 
 @interface FarmadsTableViewController : UITableViewController
+
+@property NSMutableArray *cellsArray;
 
 @end

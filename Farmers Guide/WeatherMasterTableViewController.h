@@ -11,4 +11,6 @@
 
 @interface WeatherMasterTableViewController : UITableViewController
 
+@property NSMutableArray *cellsArray;
+
 @end

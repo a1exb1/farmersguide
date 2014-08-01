@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DetailViewManager.h"
 
-@interface WeatherDetailViewController : UIViewController
+@interface WeatherDetailViewController : UIViewController <SubstitutableDetailViewController>
 
 @property (nonatomic, strong) UIBarButtonItem *navigationPaneBarButtonItem;
 

@@ -25,14 +25,22 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    //DetailViewManager *detailViewManager = (DetailViewManager*)self.splitViewController.delegate;
-    //WeatherDetailViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"WeatherDetail"];
-    //detailViewManager.detailViewController = view;
+    DetailViewManager *detailViewManager = (DetailViewManager*)self.splitViewController.delegate;
+    WeatherDetailViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"WeatherDetail"];
+    detailViewManager.detailViewController = view;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _cellsArray = [[NSMutableArray alloc] init];
+    
+    NSMutableArray *section = [[NSMutableArray alloc] init];
+    NSMutableArray *item = [[NSMutableArray alloc] initWithObjects:@"07-map-marker.png",@"Postcode", @"IP12 1LQ", nil];
+    
+    [section addObject:item];
+    [_cellsArray addObject:section];
     
 }
 
@@ -46,28 +54,33 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [[_cellsArray objectAtIndex:section] count];
 }
 
-/*
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
- {
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
- 
- // Configure the cell...
- 
- return cell;
- }
- */
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    // Configure the cell...
+    
+    cell.textLabel.text = [[[_cellsArray objectAtIndex:indexPath.section]objectAtIndex:indexPath.row]objectAtIndex:1];
+    cell.detailTextLabel.text = [[[_cellsArray objectAtIndex:indexPath.section]objectAtIndex:indexPath.row]objectAtIndex:2];
+    cell.imageView.image = [UIImage imageNamed:[[[_cellsArray objectAtIndex:indexPath.section]objectAtIndex:indexPath.row]objectAtIndex:0]];
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 /*
  // Override to support conditional editing of the table view.
