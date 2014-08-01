@@ -8,13 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "DetailViewManager.h"
+#import "ArticleOptionsViewController.h"
 
-@interface ArticleViewController : UIViewController <SubstitutableDetailViewController, UIWebViewDelegate>
+@interface ArticleViewController : UIViewController <SubstitutableDetailViewController, UIWebViewDelegate, UIPopoverControllerDelegate>
 
 @property (nonatomic, strong) UIBarButtonItem *navigationPaneBarButtonItem;
 @property long articleID;
 @property NSString *articleTitle;
 @property UIImageView *adView;
 @property NSString *mobilizer;
+@property UIBarButtonItem *readingOptionsBtn;
+@property UIPopoverController *popover;
 
 @end

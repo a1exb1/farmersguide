@@ -25,13 +25,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="xOF-Tx-RMo"/>
                     <connections>
                         <outlet property="webView" destination="T4v-4L-if4" id="dhz-3G-0NC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8S-HA-mS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="260" y="649"/>
+            <point key="canvasLocation" x="570" y="685"/>
         </scene>
         <!--Magazine Reader View Controller-->
         <scene sceneID="O8E-Q3-KQ0">
@@ -65,27 +66,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEK-QT-jFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1232" y="649"/>
+            <point key="canvasLocation" x="1542" y="685"/>
         </scene>
-        <!--View Controller-->
+        <!--Article Options View Controller-->
         <scene sceneID="dOo-Y3-gQ3">
             <objects>
-                <viewController id="tgL-YK-lKI" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="articleReader" id="tgL-YK-lKI" customClass="ArticleOptionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lQ2-t0-8C9"/>
                         <viewControllerLayoutGuide type="bottom" id="Tt1-gT-raP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vcw-yc-zhP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="106"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HIJ-jZ-dle">
+                                <rect key="frame" x="18" y="49" width="284" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Font Size: 16pt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPA-yo-ZSe">
+                                <rect key="frame" x="102" y="20" width="116" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="320"/>
+                    <size key="freeformSize" width="320" height="106"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrW-Yf-hoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="1826"/>
+            <point key="canvasLocation" x="1311" y="297"/>
         </scene>
         <!--Weather Detail View Controller-->
         <scene sceneID="sSk-pV-Ba0">
@@ -103,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CMI-6F-lYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="267" y="1890"/>
+            <point key="canvasLocation" x="251" y="1914"/>
         </scene>
         <!--Article Categories Table View Controller - Read-->
         <scene sceneID="ayB-5N-OAQ">
@@ -285,8 +299,8 @@
                 <splitViewController id="u9l-h6-DNi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
-                        <segue destination="VEC-Ci-PNH" kind="relationship" relationship="detailViewController" id="VJ6-Xu-6Xb"/>
                         <segue destination="2BC-Ni-dbB" kind="relationship" relationship="masterViewController" id="g7X-vd-29x"/>
+                        <segue destination="VEC-Ci-PNH" kind="relationship" relationship="detailViewController" id="jYm-Sq-0Oy"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KS-wf-gRT" userLabel="First Responder" sceneMemberID="firstResponder"/>

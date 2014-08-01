@@ -101,29 +101,40 @@
     [self.webView addSubview:_adView];
     self.webView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - (p-1));
     
-    UIBarButtonItem *zoomInBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"736-zoom-in-toolbar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(zoomIn)];
+    _readingOptionsBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"736-zoom-in-toolbar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(zoomIn)];
     UIBarButtonItem *zoomOutBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"737-zoom-out-toolbar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(zoomIn)];
     UIBarButtonItem *favouriteBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"726-star-toolbar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(setFrame)];
     UIBarButtonItem *mobilizeBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"810-document-2-toolbar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(mobilize)];
-    
     
     if (self.articleID > 0) {
         if([Tools isOrientationLandscape]){
             self.navigationItem.leftBarButtonItems = [[NSArray alloc] initWithObjects: favouriteBtn, mobilizeBtn, nil];
             
-            self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:zoomInBtn, /*zoomOutBtn, */  nil];
+            self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:_readingOptionsBtn, /*zoomOutBtn, */  nil];
         }
         else{
-            self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:zoomInBtn, /*zoomOutBtn,*/ favouriteBtn, mobilizeBtn,  nil];
+            self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:_readingOptionsBtn, /*zoomOutBtn,*/ favouriteBtn, mobilizeBtn,  nil];
             
         }
     }
 }
 
+-(void)zoomIn{
+
+    ArticleOptionsViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"articleReader"];
+    UIPopoverController *popController = [[UIPopoverController alloc] initWithContentViewController:view];
+    //?  popController.delegate = (id)self;
+    _popover = popController;
+    _popover.delegate = (id)self;
+    [_popover presentPopoverFromBarButtonItem:_readingOptionsBtn permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+
+    
+    //[self performSegueWithIdentifier:@"articleReadingOptions" sender:self];
+}
+
 -(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     [self setFrame];
-    
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

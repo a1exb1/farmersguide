@@ -15,6 +15,7 @@
 		E4A4FC30198A5313009C93C9 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A4FC2E198A5313009C93C9 /* twitter.png */; };
 		E4A4FC33198A569C009C93C9 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E4A4FC32198A569C009C93C9 /* twitter@2x.png */; };
 		E4A4FC37198B6E3C009C93C9 /* FarmadsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A4FC36198B6E3C009C93C9 /* FarmadsTableViewController.m */; };
+		E4A4FC3A198B874D009C93C9 /* ArticleOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A4FC39198B874D009C93C9 /* ArticleOptionsViewController.m */; };
 		E4ABFA9B196D562D00ECEC5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9A196D562D00ECEC5F /* Foundation.framework */; };
 		E4ABFA9D196D562D00ECEC5F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9C196D562D00ECEC5F /* CoreGraphics.framework */; };
 		E4ABFA9F196D562D00ECEC5F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4ABFA9E196D562D00ECEC5F /* UIKit.framework */; };
@@ -90,6 +91,8 @@
 		E4A4FC32198A569C009C93C9 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
 		E4A4FC35198B6E3C009C93C9 /* FarmadsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FarmadsTableViewController.h; sourceTree = "<group>"; };
 		E4A4FC36198B6E3C009C93C9 /* FarmadsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FarmadsTableViewController.m; sourceTree = "<group>"; };
+		E4A4FC38198B874D009C93C9 /* ArticleOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleOptionsViewController.h; sourceTree = "<group>"; };
+		E4A4FC39198B874D009C93C9 /* ArticleOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleOptionsViewController.m; sourceTree = "<group>"; };
 		E4ABFA97196D562D00ECEC5F /* Farmers Guide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmers Guide.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4ABFA9A196D562D00ECEC5F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4ABFA9C196D562D00ECEC5F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -318,6 +321,8 @@
 				E4ABFAE2196D58CD00ECEC5F /* ArticleViewController.m */,
 				E4ABFAE4196D604B00ECEC5F /* ArticlesTableViewController.h */,
 				E4ABFAE5196D604B00ECEC5F /* ArticlesTableViewController.m */,
+				E4A4FC38198B874D009C93C9 /* ArticleOptionsViewController.h */,
+				E4A4FC39198B874D009C93C9 /* ArticleOptionsViewController.m */,
 			);
 			name = Articles;
 			sourceTree = "<group>";
@@ -578,6 +583,7 @@
 				E4ABFAEF196D62A900ECEC5F /* Tools.m in Sources */,
 				E4A4FC2B198A4829009C93C9 /* magazineReaderViewController.m in Sources */,
 				E4ABFAAB196D562D00ECEC5F /* AppDelegate.m in Sources */,
+				E4A4FC3A198B874D009C93C9 /* ArticleOptionsViewController.m in Sources */,
 				E4ABFAA7196D562D00ECEC5F /* main.m in Sources */,
 				E4ABFB0C196D69FB00ECEC5F /* WeatherDetailViewController.m in Sources */,
 				E40AEBB3196D9DCC0037AE44 /* UIScrollView+SVPullToRefresh.m in Sources */,
