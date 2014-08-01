@@ -173,19 +173,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scshowers.png" translatesAutoresizingMaskIntoConstraints="NO" id="HLy-Q5-9S4">
-                                <rect key="frame" x="246" y="129" width="261" height="168"/>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="scshowers.png" translatesAutoresizingMaskIntoConstraints="NO" id="HLy-Q5-9S4">
+                                <rect key="frame" x="507" y="78" width="261" height="168"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scattered Showers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwZ-W1-ENC">
-                                <rect key="frame" x="246" y="122" width="277" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Scattered Showers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwZ-W1-ENC">
+                                <rect key="frame" x="35" y="123" width="277" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="22.3°C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-Jn-eih">
-                                <rect key="frame" x="352" y="286" width="126" height="21"/>
+                                <rect key="frame" x="35" y="152" width="126" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="highlightedColor"/>
@@ -193,10 +193,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HLy-Q5-9S4" firstAttribute="top" secondItem="f6w-kS-EA4" secondAttribute="bottom" constant="109" id="594-pc-zWy"/>
-                            <constraint firstItem="hbl-40-uC6" firstAttribute="top" secondItem="HLy-Q5-9S4" secondAttribute="bottom" constant="727" id="Q6j-P1-f4p"/>
-                            <constraint firstAttribute="trailing" secondItem="HLy-Q5-9S4" secondAttribute="trailing" constant="261" id="ZVm-Kg-MeF"/>
-                            <constraint firstItem="HLy-Q5-9S4" firstAttribute="leading" secondItem="F79-b8-C3w" secondAttribute="leading" constant="246" id="rkj-Xi-vUb"/>
+                            <constraint firstAttribute="trailing" secondItem="HLy-Q5-9S4" secondAttribute="trailing" constant="15" id="XoL-3t-aO8"/>
                         </constraints>
                     </view>
                 </viewController>
