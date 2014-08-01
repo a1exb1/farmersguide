@@ -107,14 +107,16 @@
     UIBarButtonItem *mobilizeBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"810-document-2-toolbar.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(mobilize)];
     
     
-    if([Tools isOrientationLandscape]){
-        self.navigationItem.leftBarButtonItems = [[NSArray alloc] initWithObjects: favouriteBtn, mobilizeBtn, nil];
-        
-        self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:zoomInBtn, zoomOutBtn,  nil];
-    }
-    else{
-        self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:zoomInBtn, zoomOutBtn, favouriteBtn, mobilizeBtn,  nil];
-        
+    if (self.articleID > 0) {
+        if([Tools isOrientationLandscape]){
+            self.navigationItem.leftBarButtonItems = [[NSArray alloc] initWithObjects: favouriteBtn, mobilizeBtn, nil];
+            
+            self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:zoomInBtn, /*zoomOutBtn, */  nil];
+        }
+        else{
+            self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects:zoomInBtn, /*zoomOutBtn,*/ favouriteBtn, mobilizeBtn,  nil];
+            
+        }
     }
 }
 

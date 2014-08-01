@@ -67,6 +67,26 @@
             </objects>
             <point key="canvasLocation" x="1232" y="649"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="dOo-Y3-gQ3">
+            <objects>
+                <viewController id="tgL-YK-lKI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lQ2-t0-8C9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tt1-gT-raP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vcw-yc-zhP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="320"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vrW-Yf-hoK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="503" y="1826"/>
+        </scene>
         <!--Weather Detail View Controller-->
         <scene sceneID="sSk-pV-Ba0">
             <objects>
