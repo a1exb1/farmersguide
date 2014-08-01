@@ -34,8 +34,12 @@
         [self.tableView deselectRowAtIndexPath:indexPath animated:animated];
     }
     
-    [Tools showLoaderWithView:self.view];
-    [self refresh];
+    
+    if (!_loaded) {
+        [self refresh];
+        _loaded = YES;
+    }
+    
 }
 
 - (void)viewDidLoad
@@ -71,14 +75,14 @@
     [_section2Array addObject:cell];
     
     [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"874-newspaper-selected.png"] imageWithRenderingMode:UIImageRenderingModeAutomatic]];
-    
-    
-    
 }
 
 -(void)refresh
 {
     //[self.refreshControl beginRefreshing];
+    if (!_loaded)
+        [Tools showLightLoaderWithView:self.view];
+    
     jsonReader *reader = [[jsonReader alloc] init];
     reader.delegate = (id)self;
     [reader jsonAsyncRequestWithDelegateAndUrl:@"http://www.bechmann.co.uk/fg/GetJSData.aspx?dt=Categories&id=1"];

@@ -21,4 +21,6 @@
 
 -(IBAction)refresh;
 
+@property bool loaded;
+
 @end
