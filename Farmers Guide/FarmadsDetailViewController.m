@@ -47,7 +47,7 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    self.title = @"Balers & Bale Handling (4 results)";
+    self.title = @"Balers & Bale Handling (8 results)";
     
     if (_navigationPaneBarButtonItem)
         self.navigationItem.leftBarButtonItem = self.navigationPaneBarButtonItem;

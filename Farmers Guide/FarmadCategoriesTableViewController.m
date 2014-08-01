@@ -86,11 +86,11 @@
             break;
             
         case 1:
-            cell.detailTextLabel.text = @"24";
+            cell.detailTextLabel.text = @"8";
             break;
             
         case 2:
-            cell.detailTextLabel.text = @"14";
+            cell.detailTextLabel.text = @"29";
             break;
             
         case 3:
